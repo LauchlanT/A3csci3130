@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 
         //Set-up Firebase
         appData.firebaseDBInstance = FirebaseDatabase.getInstance();
-        appData.firebaseReference = appData.firebaseDBInstance.getReference("contacts");
+        appData.firebaseReference = appData.firebaseDBInstance.getReference();
 
         //Get the reference to the UI contents
         contactListView = (ListView) findViewById(R.id.listView);
@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
             @Override
             protected void populateView(View v, Contact model, int position) {
                 TextView contactName = (TextView)v.findViewById(android.R.id.text1);
-                contactName.setText(model.businessid);
+                contactName.setText(model.businessname);
             }
         };
         contactListView.setAdapter(firebaseAdapter);

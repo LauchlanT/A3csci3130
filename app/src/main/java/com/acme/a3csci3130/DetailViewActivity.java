@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class DetailViewActivity extends Activity {
 
-    private EditText nameField, emailField;
+    private EditText nameField, addressField;
+    private Spinner typeField, provinceField;
     Contact receivedPersonInfo;
 
     @Override
@@ -17,12 +19,12 @@ public class DetailViewActivity extends Activity {
         setContentView(R.layout.activity_detail_view);
         receivedPersonInfo = (Contact)getIntent().getSerializableExtra("Contact");
 
-        nameField = (EditText) findViewById(R.id.name);
-        emailField = (EditText) findViewById(R.id.email);
+        nameField = (EditText) findViewById(R.id.businessname);
+        addressField = (EditText) findViewById(R.id.businessaddress);
 
         if(receivedPersonInfo != null){
-            nameField.setText(receivedPersonInfo.businessid);
-            emailField.setText(receivedPersonInfo.businessname);
+            nameField.setText(receivedPersonInfo.businessname);
+            addressField.setText(receivedPersonInfo.businessaddress);
         }
     }
 

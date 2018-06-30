@@ -7,25 +7,14 @@
     tools:context="com.acme.a3csci3130.CreateContactAcitivity">
 
     <EditText
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/businessid"
-        android:hint = "Business ID"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp" />
-
-    <EditText
         android:id="@+id/businessname"
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:hint="Business Name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/businessid"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="8dp" />
 
     <Spinner
