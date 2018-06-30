@@ -35,5 +35,7 @@ public class DetailViewActivity extends Activity {
     public void eraseContact(View v)
     {
         //TODO: Erase contact functionality
+        MyApplicationData appData = (MyApplicationData)getApplication();
+        appData.firebaseReference.child(receivedPersonInfo.businessid).removeValue();
     }
 }
