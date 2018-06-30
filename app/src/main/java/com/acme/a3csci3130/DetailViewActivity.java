@@ -21,8 +21,8 @@ public class DetailViewActivity extends Activity {
         emailField = (EditText) findViewById(R.id.email);
 
         if(receivedPersonInfo != null){
-            nameField.setText(receivedPersonInfo.name);
-            emailField.setText(receivedPersonInfo.email);
+            nameField.setText(receivedPersonInfo.businessid);
+            emailField.setText(receivedPersonInfo.businessname);
         }
     }
 
