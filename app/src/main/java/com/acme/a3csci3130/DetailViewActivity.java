@@ -1,6 +1,7 @@
 package com.acme.a3csci3130;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,11 +51,15 @@ public class DetailViewActivity extends Activity {
         receivedPersonInfo.businessprovince = provinceField.getSelectedItem().toString();
         MyApplicationData appData = (MyApplicationData)getApplication();
         appData.firebaseReference.child(receivedPersonInfo.businessid).setValue(receivedPersonInfo);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     public void eraseContact(View v)
     {
         MyApplicationData appData = (MyApplicationData)getApplication();
         appData.firebaseReference.child(receivedPersonInfo.businessid).removeValue();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
