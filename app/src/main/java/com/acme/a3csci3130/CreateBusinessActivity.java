@@ -29,6 +29,11 @@ public class CreateBusinessActivity extends Activity {
         provinceField = (Spinner) findViewById(R.id.businessprovince);
     }
 
+    /**
+     *
+     * @param v the view of the business
+     *          Creates the entry for the business
+     */
     public void submitInfoButton(View v) {
         //each entry needs a unique ID
         String businessID = appState.firebaseReference.push().getKey();
@@ -38,7 +43,7 @@ public class CreateBusinessActivity extends Activity {
         String address = addressField.getText().toString();
         String province = provinceField.getSelectedItem().toString();
 
-        Contact business = new Contact(businessID, number, name, type, address, province);
+        Business business = new Business(businessID, number, name, type, address, province);
 
         appState.firebaseReference.child(businessID).setValue(business);
 

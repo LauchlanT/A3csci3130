@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -12,13 +11,13 @@ public class DetailViewActivity extends Activity {
 
     private EditText nameField, numberField, addressField;
     private Spinner typeField, provinceField;
-    Contact receivedPersonInfo;
+    Business receivedPersonInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_view);
-        receivedPersonInfo = (Contact)getIntent().getSerializableExtra("Contact");
+        receivedPersonInfo = (Business)getIntent().getSerializableExtra("Business");
 
         nameField = (EditText) findViewById(R.id.businessname);
         numberField = (EditText) findViewById(R.id.businessnumber);
@@ -43,6 +42,11 @@ public class DetailViewActivity extends Activity {
         }
     }
 
+    /**
+     *
+     * @param v the view of the business
+     *          Updates the business
+     */
     public void updateBusiness(View v){
         receivedPersonInfo.businessname = nameField.getText().toString();
         receivedPersonInfo.businessnumber = numberField.getText().toString();
@@ -55,6 +59,11 @@ public class DetailViewActivity extends Activity {
         startActivity(intent);
     }
 
+    /**
+     *
+     * @param v the view of the business
+     *          Deletes the business
+     */
     public void eraseBusiness(View v)
     {
         MyApplicationData appData = (MyApplicationData)getApplication();
