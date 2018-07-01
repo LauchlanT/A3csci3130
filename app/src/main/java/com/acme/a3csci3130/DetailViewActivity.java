@@ -43,7 +43,6 @@ public class DetailViewActivity extends Activity {
     }
 
     public void updateContact(View v){
-        //TODO: Update contact funcionality
         receivedPersonInfo.businessname = nameField.getText().toString();
         receivedPersonInfo.businessnumber = numberField.getText().toString();
         receivedPersonInfo.businesstype = typeField.getSelectedItem().toString();
@@ -55,7 +54,6 @@ public class DetailViewActivity extends Activity {
 
     public void eraseContact(View v)
     {
-        //TODO: Erase contact functionality
         MyApplicationData appData = (MyApplicationData)getApplication();
         appData.firebaseReference.child(receivedPersonInfo.businessid).removeValue();
     }
